@@ -1,5 +1,1 @@
-Papers_neuroscience_all.json -> paper metadata
-citationNetwork.csv -> citation network edgelist
-authorId_name_affiliation_neuroscience.csv -> authorId to author name
-Affiliations_neuroscience.json -> affiliationId to author name
-neuroscience_journals.csv -> list of neuroscience journals with issn
+SCRIPTS FOR EXTRACTING A DISCIPLINARY DATASET FROM MAG
