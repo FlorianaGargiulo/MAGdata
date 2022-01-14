@@ -71,9 +71,9 @@ def MatchingMetadataReferences(metadata_split,metadata_splits_folder,PaperRefere
 
 if __name__ == '__main__' :
 
-    path_metadata_splits = r"/home/sylvain/DOCTORAT/DATA/microsoft_academic/AIfilter/metadata_bis"
-    path_linkPaperReferences_splits = r"/home/sylvain/DOCTORAT/DATA/microsoft_academic/dataset_20200529/extracted/PaperReferences_simplified_splits"
-    path_references_filtered = r"/home/sylvain/DOCTORAT/DATA/microsoft_academic/AIfilter/FilteredReferencesID_splits"
+    path_metadata_splits = ..
+    path_linkPaperReferences_splits = ..
+    path_references_filtered = ..
 
     # if output path exists remove the old files in the destination folder if it is not empty
     # else create the path
@@ -128,36 +128,23 @@ with open(f'{path_references_filtered}/all_references_filtered.txt','w') as ww :
         ww.write(i+'\n')
 
 # find the associated metadata within 'Papers_simplified.txt'
-
-def multiThreadMatchIDMeta(refIDs_chunk,IDs_candidates) :
-
-
-
 def ProcessMatchIDMeta(Papers_split,dir_Papers_splits,IDs_candidates,outputdir) :
 
     print('enter')
     t1 = time.time()
     num = re.findall(r'\d+', Papers_split)[0]
-    refs_meta = []
-    with open(f"{dir_Papers_splits}/{Papers_split}",'r') as bj:
-        meta_split = json.load(bj)
-    IDs = [d['id'] for d in meta_split]
-    match = set(IDs).intersection(IDs_candidates)
-    print(len(match))
-    for m in match:
-        p = meta_split[IDs.index(m)]
-        # add queryLevel = 1 for all (cited papers) : it will be doubloons with queryLevel = 0 in the metadata folder
-        p['queryLevel'] = "1"
-        refs_meta.append(p)
-    with open(f'{outputdir}/references{num}.json', 'r') as bj:
-        json.dump(refs_meta, bj, indent=2)
-    refs_meta.clear()
+    meta_split = pd.read_json(f"{dir_Papers_splits}/{Papers_split}",dtype='str') # warning to 'str'
+    refs_meta = meta_split.loc[meta_split['id'].isin(IDs_candidates)]
+    refs_meta['queryLevel'] = "1"
+    print(len(refs_meta))
+    refs_meta.to_json(f'{outputdir}/references{num}.json',orient='records',indent=2)
+    del refs_meta
     t2 = time.time()
     print(f'done in {t2-t1}')
 
 if __name__ == '__main__' :
 
-    path_allpapers = r"/home/sylvain/DOCTORAT/DATA/microsoft_academic/dataset_20200529/extracted/Papers_simplified_splits"
+    path_allpapers = ..
     files = os.listdir(path_allpapers)
     nb_processes = 8
 
