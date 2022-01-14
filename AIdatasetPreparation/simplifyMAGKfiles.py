@@ -1,9 +1,9 @@
 import pandas as pd
 
 # ---------SIMPLIFY 'Papers.nt'-----------
-path_papers = r"/media/sylvain/TOSHIBA EXT/microsoft_academic_RDF20200529/extracted/"
+path_papers = r"/../your/path/"
 monster = path_papers + 'Papers.nt'
-outFile = r"/home/sylvain/DOCTORAT/DATA/microsoft_academic/dataset_20200529/extracted/Papers_simplified.txt"
+outFile = r"your_path/Papers_simplified.txt"
 ww = open(outFile,'w')
 
 c1='http://ma-graph.org/property/'
@@ -28,9 +28,9 @@ ww.close()
 
 # ---------SIMPLIFY 'Journals.nt'-----------
 
-path_journals = r"/media/sylvain/TOSHIBA EXT/microsoft_academic_RDF20200529/extracted/"
+path_journals = r"/../your/path/"
 monster = path_journals + 'Journals.nt'
-outFile = r"/home/sylvain/DOCTORAT/DATA/microsoft_academic/dataset_20200529/extracted/Journals_simplified.txt"
+outFile = r"your_path/Journals_simplified.txt"
 ww = open(outFile,'w')
 
 c1='http://ma-graph.org/property/'
@@ -55,9 +55,9 @@ ww.close()
 
 # ---------SIMPLIFY 'FieldsOfStudy.nt'-----------
 
-path_fos = r"/media/sylvain/TOSHIBA EXT/microsoft_academic_RDF20200529/extracted/"
+path_fos = r"/../your/path/"
 monster = path_fos + 'FieldsOfStudy.nt'
-outFile = r"/home/sylvain/DOCTORAT/DATA/microsoft_academic/dataset_20200529/extracted/FieldsOfStudy_simplified.txt"
+outFile = r"your_path/FieldsOfStudy_simplified.txt"
 ww = open(outFile,'w')
 
 c1='http://ma-graph.org/property/'
@@ -81,9 +81,9 @@ ww.close()
 
 # ---------SIMPLIFY 'Affiliations.nt'-----------
 
-path_aff = r"/media/sylvain/TOSHIBA EXT/microsoft_academic_RDF20200529/extracted/"
+path_aff = r"/../your/path/"
 monster = path_aff + 'Affiliations.nt'
-outFile = r"/home/sylvain/DOCTORAT/DATA/microsoft_academic/dataset_20200529/extracted/Affiliations_simplified.txt"
+outFile = r"your_path/Affiliations_simplified.txt"
 ww = open(outFile,'w')
 
 c1='http://ma-graph.org/property/'
@@ -111,9 +111,8 @@ ww.close()
 repla1='<http://ma-graph.org/entity/'
 repla2='> <http://purl.org/dc/terms/creator> '
 
-infile = r"/media/sylvain/TOSHIBA EXT/microsoft_academic_RDF20200529/extracted/PaperAuthorAffiliations.nt"
-# infile = r"/home/sylvain/DOCTORAT/DATA/microsoft_academic/dataset_20200529/samples/PaperAuthorAffiliations_sample.nt"
-outFile = r"/home/sylvain/DOCTORAT/DATA/microsoft_academic/dataset_20200529/extracted/PaperAuthorAffiliations_simplified.txt"
+infile = r"your_path/PaperAuthorAffiliations.nt"
+outFile = r"your_path/PaperAuthorAffiliations_simplified.txt"
 ww = open(outFile,'w')
 ww.write('paper;author\n')
 for line in open(infile):
@@ -132,9 +131,8 @@ t3='> <http://xmlns.com/foaf/0.1/name> "'
 t4='> <http://ma-graph.org/property/'
 t5='> <http://purl.org/dc/terms/created> "'
 
-infile = r"/media/sylvain/TOSHIBA EXT/microsoft_academic_RDF20200529/extracted/Authors.nt"
-#infile = r"/home/sylvain/DOCTORAT/DATA/microsoft_academic/dataset_20200529/samples/Authors_sample.nt"
-outFile = r"/home/sylvain/DOCTORAT/DATA/microsoft_academic/dataset_20200529/extracted/Authors_simplified.txt"
+infile = r"your_path/Authors.nt"
+outFile = r"your_path/Authors_simplified.txt"
 ww = open(outFile,'w')
 for line in open(infile):
     if t1 in line:
@@ -154,9 +152,8 @@ ww.close()
 
 # ---------SIMPLIFY 'PaperReferences.nt'-----------
 
-infile = r"/media/sylvain/TOSHIBA EXT/microsoft_academic_RDF20200529/extracted/PaperReferences.nt"
-#infile = r"/home/sylvain/DOCTORAT/DATA/microsoft_academic/dataset_20200529/samples/PaperReferences_sample.nt"
-outfile = r"/home/sylvain/DOCTORAT/DATA/microsoft_academic/dataset_20200529/extracted/PaperReferences_simplified.txt"
+infile = r"your_path/PaperReferences.nt"
+outfile = r"your_path/PaperReferences_simplified.txt"
 
 i = 0
 chunksize = 10 ** 6
@@ -171,9 +168,8 @@ for chunk in pd.read_csv(infile, chunksize=chunksize, names=['citing', 'cited'],
 
 # ---------SIMPLIFY 'PaperFieldsOfStudy.nt'-----------
 
-infile = r"/media/sylvain/TOSHIBA EXT/microsoft_academic_RDF20200529/extracted/PaperFieldsOfStudy.nt"
-#infile = r"/home/sylvain/DOCTORAT/DATA/microsoft_academic/dataset_20200529/samples/PaperReferences_sample.nt"
-outfile = r"/home/sylvain/DOCTORAT/DATA/microsoft_academic/dataset_20200529/extracted/PaperFieldsOfStudy_simplified.txt"
+infile = r"your_paath/PaperFieldsOfStudy.nt"
+outfile = r"your_path/PaperFieldsOfStudy_simplified.txt"
 
 i = 0
 chunksize = 10 ** 6
@@ -196,8 +192,8 @@ repla3='> <http://www.w3.org/ns/org#memberOf> <https://makg.org/entity/' # ;affi
 t1='> <http://xmlns.com/foaf/0.1/name> '
 t2='<http://www.w3.org/ns/org#memberOf>'
 
-infile = r"/media/sylvain/TOSHIBA EXT/microsoft_academic_RDF20200619/extracted/Authors_disambiguated.nt"
-outFile = r"/home/sylvain/DOCTORAT/DATA/microsoft_academic/dataset_20200619/extracted/Authors_disambiguated_simplified.txt"
+infile = r"your_path/Authors_disambiguated.nt"
+outFile = r"your_path/Authors_disambiguated_simplified.txt"
 ww = open(outFile,'w')
 for line in open(infile):
     if t1 in line:
