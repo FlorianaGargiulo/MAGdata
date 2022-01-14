@@ -96,7 +96,7 @@ def SplitTXT2MULTIJSON(dir,input_file,filetype,maxsize) :
     print(t2 - t1)
 
 # ----------------EXECUTION----------------
-dir = r"/home/sylvain/DOCTORAT/DATA/microsoft_academic/dataset_20200529/extracted/"
+dir = ..
 input = 'Affiliations_simplified'
 
 SplitTXT2MULTIJSON(dir,input,'affiliations',1000000)
@@ -147,9 +147,9 @@ def ReadAssembleSplit(input,output_dir,maxsize) :
             ww.write(h + '\n')
 
 # -------------EXECUTION FOR "PaperAffiliation_simplified.txt-------------------
-dir = r"/home/sylvain/DOCTORAT/DATA/microsoft_academic/dataset_20200529/extracted"
+dir = ..
 input = 'PaperReferences_simplified_sample.txt'
-output_dir = r"/home/sylvain/DOCTORAT/DATA/microsoft_academic/dataset_20200529/extracted/PaperReferences_simplified_splits"
+output_dir = ..
 
 # if output path exists remove the old files in the destination folder if it is not empty
 # else create the path
