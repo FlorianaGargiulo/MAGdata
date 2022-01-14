@@ -49,9 +49,9 @@ def ReadAssembleSplit(dir,input,output_dir,maxsize) :
             ww.write(h)
 
 # -------------EXECUTION FOR "PaperAffiliation_simplified.txt-------------------
-dir = r"/home/sylvain/DOCTORAT/DATA/microsoft_academic/dataset_20200529/extracted"
+dir = ..
 input = 'PaperReferences_simplified'
-output_dir = r"/home/sylvain/DOCTORAT/DATA/microsoft_academic/dataset_20200529/extracted/PaperReferences_simplified_splits"
+output_dir = ..
 
 # if output path exists remove the old files in the destination folder if it is not empty
 # else create the path
