@@ -81,14 +81,14 @@ def MergeJSON(directory,filename) :
 #---------------EXECUTION-----------------
 
 keywords = []
-for line in open(r"/mnt/d/DOCTORAT/DATA/wiki_ai_keywords.csv"):
+for line in open(r"your_path/wiki_ai_keywords.csv"):
     keywords = line[:-1].rstrip().replace('\'','').lower().split(', ')
 
 keys = ['numfile','firstline','lastline']
 
-dir_samples = r"F:/microsoft_academic_RDF20200529/extracted/PaperAbstracts_split/"
+dir_samples = ..
 files = os.listdir(dir_samples)
-dir_filtered = r"/mnt/d/DOCTORAT/DATA/microsoft_academic/FilteredIDAbstracts_AI/"
+dir_filtered = ..
 files = files[1:]
 
 nb_processes = 2
