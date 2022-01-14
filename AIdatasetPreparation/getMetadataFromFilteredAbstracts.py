@@ -73,10 +73,10 @@ def SearchAndAddMetadata(file,directory_abstracts,metadata,num_metafile,director
 
 if __name__ == '__main__' :
 
-    path_allpapers = r"/home/sylvain/DOCTORAT/DATA/microsoft_academic/dataset_20200529/extracted/Papers_simplified_splits"
-    path_abstractsAI = r"/home/sylvain/DOCTORAT/DATA/microsoft_academic/AIfilter/FilteredIDAbstracts_AI"
-    path_abstractsAI_copy = r"/home/sylvain/DOCTORAT/DATA/microsoft_academic/AIfilter/FilteredIDAbstracts_AI_copy"
-    path_filteredAI = r"/home/sylvain/DOCTORAT/DATA/microsoft_academic/AIfilter/metadata_bis"
+    path_allpapers = ..
+    path_abstractsAI = ..
+    path_abstractsAI_copy = ..
+    path_filteredAI = ..
 
     # to prevent errors : remove copy folder and get the initial files before starting the process
     if os.path.exists(path_abstractsAI_copy) :
