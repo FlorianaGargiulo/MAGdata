@@ -139,6 +139,7 @@ def ProcessMatchIDMeta(Papers_split,dir_Papers_splits,IDs_candidates,outputdir) 
     print(len(refs_meta))
     refs_meta.to_json(f'{outputdir}/references{num}.json',orient='records',indent=2)
     del refs_meta
+    del meta_split
     t2 = time.time()
     print(f'done in {t2-t1}')
 
