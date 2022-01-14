@@ -27,7 +27,8 @@ def MergeJSON(directory,filename) :
 
 #----------ADD AUTHORS' ID TO METADATA FILE------------------
 
-# given the metadata file, check the authors' IDs associated with the papers' IDs
+# given the metadata file, check the authors' IDs associated with the papers' IDs,
+# then write a file containing the authors and rewrite the metadata file with updated field 'authors'
 def MatchingMetadataAuthors(metadata_split,metadata_splits_folder,PaperAuthor_dataframe,new_metadata_folder,filteredAuthor_folder) :
 
     num = re.findall(r'\d+', metadata_split)[0]  # the number of the metadata file
@@ -49,16 +50,13 @@ def MatchingMetadataAuthors(metadata_split,metadata_splits_folder,PaperAuthor_da
 
     print('done')
 
-def MergeAuthorsFiles(dir) :
-
-
 if __name__ == '__main__' :
 
-    path_metadata_splits = r"/home/sylvain/DOCTORAT/DATA/microsoft_academic/AIfilter/metadata"
-    path_linkPaperAuthors_splits = r"/home/sylvain/DOCTORAT/DATA/microsoft_academic/dataset_20200529/extracted/PaperAuthorAffiliations_simplified_splits"
-    path_authors_splits = r"/home/sylvain/DOCTORAT/DATA/microsoft_academic/dataset_20200529/extracted/Authors_simplified_splits"
-    new_path_metadata_splits = r"/home/sylvain/DOCTORAT/DATA/microsoft_academic/AIfilter/metadata_update"
-    path_authors_filtered = r"/home/sylvain/DOCTORAT/DATA/microsoft_academic/AIfilter/FilteredAuthorsID_splits"
+    path_metadata_splits = ..
+    path_linkPaperAuthors_splits = ..
+    path_authors_splits = ..
+    new_path_metadata_splits = ..
+    path_authors_filtered = ..
 
     # if output path exists remove the old files in the destination folder if it is not empty
     # else create the path
